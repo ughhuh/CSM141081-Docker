@@ -1,9 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
+const mongoose = require("mongoose");
 
 const indexRouter = require('./routes/index');
 const todosRouter = require('./routes/todos');
+
+mongoose.connect(process.env.MONGO_URL)
 
 const app = express();
 

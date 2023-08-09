@@ -21,7 +21,12 @@ if (!REDIS_URL) {
   setAsync = promisify(client.set).bind(client)    
 }
 
+const Counter = async () => {
+  await setAsync('todo_counter', (parseInt(await getAsync('todo_counter')) || 0) + 1);
+};
+
 module.exports = {
   getAsync,
-  setAsync
+  setAsync,
+  Counter
 }
