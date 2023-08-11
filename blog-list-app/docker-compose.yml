@@ -1,0 +1,20 @@
+services:
+  app:
+    image: blog-list-frontend
+    build:
+      context: ./blog-list-frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    container_name: blog-list-frontend
+    depends_on:
+      - server
+  
+  server:
+    image: blog-list-backend
+    build:
+      context: ./blog-list-backend/
+      dockerfile: Dockerfile
+    ports:
+      - 3003:3003
+    container_name: blog-list-backend

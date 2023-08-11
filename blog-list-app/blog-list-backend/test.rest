@@ -1,0 +1,11 @@
+POST https://localhost:3003/api/blogs
+
+Content-Type: application/json
+Authorization: bearer morebloodforthebloodgod
+
+{
+  "title": "Something Else",
+  "author": "Robert C. Martin",
+  "url": "http://blog.cleancoder.com/uncle-bob/2016/05/02/SomethingElse.html",
+  "likes": 3
+}
